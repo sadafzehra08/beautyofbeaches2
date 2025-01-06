@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeautyOfBeaches - Discover World's Most Beautiful Beaches</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/zones.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    
+    <link rel="stylesheet" href="css/travel.css" />
+    <style>
+        .container2 {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f0f8ff;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+    
+        .section {
+          text-align: center;
+          width: 100%;
+          max-width: 1200px;
+        }
+    
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 20px;
+          color: #333;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
+    
+        .section-title:hover {
+          color: #007acc;
+          transform: scale(1.1);
+        }
+    
+        .row {
+          display: flex;
+          justify-content: space-around;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+    
+        .card {
+          width: 22%;
+          background-color: white;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .card:hover {
+          transform: translateY(-10px) rotate(5deg);
+          box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+    
+        .card-image {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          animation: fadeIn 2s ease;
+        }
+        section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color:   #0891b2;
+    font-size: 2.5rem;
+}
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+       
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .quote-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            padding: 20px;
+            max-width: 80%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+        }
+
+        .quote-container h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .quote-container p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .community-section {
+  background-color: rgba(0, 139, 139, 0.342);
+      background-size: cover;
+      background-position: center;
+      padding: 50px 0;
+      color: black;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .join-btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #0e336b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .join-btn:hover {
+      background-color: #e07b00;
+    }
+      </style>
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=50&h=50&fit=crop"
+                    alt="BeautyOfBeaches Logo" />
+                <span>BeautyOfBeaches</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#travel">Travel</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="About us.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Discover the World's Most Beautiful Beaches</h1>
+                <p>
+                    Explore pristine coastlines and paradise destinations across the
+                    globe
+                </p>
+            </div>
+            <div class="hero-images">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=400&fit=crop"
+                    alt="Beautiful Beach" />
+            </div>
+        </section>
+        <div class="video-container">
+            <video loop autoplay muted>
+                <source src="https://cdn.pixabay.com/video/2021/04/12/70796-538877060_tiny.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="quote-container">
+                <h1>Beauty of Beaches</h1>
+                <p>"The beach is not a place, it's a feeling." - Unknown</p>
+            </div>
+        </div>
+    
+    </section>
+    
+      <section>
+        <h2 class="section-title">Our Favourite Beaches</h2>
+        <div class="row">
+          <div class="card">
+            <img class="card-image" src="https://media.istockphoto.com/id/985553596/photo/palawan-el-nido-entalula-island-beach-philippines.webp?a=1&b=1&s=612x612&w=0&k=20&c=kWUZqlwkORuEpPRis8mRmAxVkO2sS2ptrqpugqn9Lig=" alt="Beach 1">
+          </div>
+          <div class="card">
+            <img class="card-image" src="https://media.istockphoto.com/id/1442179368/photo/maldives-island.webp?a=1&b=1&s=612x612&w=0&k=20&c=rRpu6W9p7NC3Z7Q0LvRyhXYt8i0j7Wjx-Gp3ipOWvho=" alt="Beach 2">
+          </div>
+          <div class="card">
+            <img class="card-image" src="https://media.istockphoto.com/id/1038412058/photo/pacific-ocean-at-big-sur.webp?a=1&b=1&s=612x612&w=0&k=20&c=XFYTLJsaOjcA5m-Vv6u0BxC3GxQngpGNt5wsgohNRSs=" alt="Beach 3">
+          </div>
+          <div class="card">
+            <img class="card-image" src="https://media.istockphoto.com/id/474185479/photo/barbados.webp?a=1&b=1&s=612x612&w=0&k=20&c=vrfur7WALrUDdcJZXasxK2BEc7O__hZxGViYcNirQ_Y=" alt="Beach 4">
+          </div>
+        </div>
+      </section> 
+        <section class="gallery">
+            <h2>Plan Your Journey</h2>
+        </section>
+
+        <section id="travel" class="travel">
+            <!-- <h2>Plan Your Journey</h2> -->
+            <!-- Car Card -->
+            <div class="vehicle-card">
+                <img src="https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0="
+                    alt="Car" />
+                <div class="card-content">
+                    <h3>By Plane</h3>
+                    <ul>
+                        <li><strong>Route:</strong> Take Pacific Coast Highway (PCH).</li>
+                        <li><strong>Time:</strong> 30-45 minutes from Downtown.</li>
+                        <li><strong>Cost:</strong> $50 for parking.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bus Card -->
+            <div class="vehicle-card">
+                <img src="https://plus.unsplash.com/premium_photo-1664302152991-d013ff125f3f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzfGVufDB8fDB8fHww"
+                    alt="Bus" />
+                <div class="card-content">
+                    <h3>By Bus</h3>
+                    <ul>
+                        <li><strong>Route:</strong> Bus [Bus Number] from [Station].</li>
+                        <li><strong>Cost:</strong> $100 for a one-way ticket.</li>
+                        <li><strong>Duration:</strong> 1 HOUR to destination.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Taxi Card -->
+            <div class="vehicle-card">
+                <img src="https://media.istockphoto.com/id/518657226/photo/taxis-on-7th-avenue-at-times-square-new-york-city.jpg?s=612x612&w=0&k=20&c=BrlO3xOnExms2bccaiVgKDNfCrr8AOL2B31Cjwj7yIY="
+                    alt="Taxi" />
+                <div class="card-content">
+                    <h3>By Taxi</h3>
+                    <ul>
+                        <li><strong>Pickup:</strong> From [Landmark].</li>
+                        <li><strong>Fare:</strong> Approx. $30</li>
+                        <li><strong>Duration:</strong> 1 HOUR to the beach.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bicycle Card -->
+            <div class="vehicle-card">
+                <img src="https://static.vecteezy.com/system/resources/previews/032/947/159/non_2x/steam-train-chugs-through-rural-mountainside-scenery-free-photo.jpg"
+                    alt="Bicycle" />
+                <div class="card-content">
+                    <h3>By Train</h3>
+                    <ul>
+                        <li><strong>Rent:</strong> Available at [Rental Location].</li>
+                        <li><strong>Cost:</strong> $40 per hour.</li>
+                        <li><strong>Duration:</strong> Approx. 40 minutes.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Add more vehicle cards as needed -->
+        </section>
+    </main>
+
+
+    <section class="community-section">
+        <div class="container">
+          <h2>Join Our Community for Beautiful Beaches Visit</h2>
+          <p>Discover stunning beaches, connect with fellow beach lovers, and enjoy unforgettable beach experiences!</p>
+          <button class="join-btn">Join Now</button>
+        </div>
+      </section>
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#sitemap">Sitemap</a></li>
+                    <li><a href="contact.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BeautyOfBeaches. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

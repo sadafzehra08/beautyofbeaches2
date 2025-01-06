@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Beauty With Beaches"</title>
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+input{
+    display: none;
+}
+.container{
+    margin-top: 90px;
+    width: 100%;
+    text-align: center;
+}
+h1{ 
+    /* margin-top: 80px; */
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #2a7e8f;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 100px;
+    }
+    50%{
+        width: 200px;
+    }
+    100%{
+        width: 100px;
+    }
+}
+.top-content{
+    background-color: #0A97B0;
+    width: 90%;
+    margin: 0 auto 20px auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px lightgray;
+}
+h3{
+    height: 100%;
+    background-color: #2a7e8f;
+    line-height: 60px;
+    padding: 0 50px;
+    color: white;
+}
+
+label {
+    display: inline-block;
+    height: 100%;
+    margin: 0 20px;
+    line-height: 60px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: color 0.3s ease;
+}
+
+label:hover {
+    color: black;
+}
+
+
+
+
+
+
+.photo-gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.pic{
+    position: relative;
+    height: 230px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px lightgray;
+    cursor: pointer;
+    transition: .5s;
+}
+.pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: .5s;
+}
+.pic::before{
+    content: attr(data-name);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: -100px;
+    opacity: 0;
+    transition: .3s;
+    transition-delay: .2s;
+    z-index: 1;
+}
+
+.pic:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    height: 0;
+    background-color: rgba(0,0, 0 , .4);
+    transition: .3s;
+}
+.pic:hover::after{
+    height: 100%;
+}
+.pic:hover::before{
+    margin-top: 0;
+    opacity: 1;
+}
+.photo-gallery > * {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0.5s;
+}
+#check1:checked ~ .container .photo-gallery .pic,
+#check2:checked ~ .container .photo-gallery .family,
+#check3:checked ~ .container .photo-gallery .child,
+#check4:checked ~ .container .photo-gallery .place,
+#check5:checked ~ .container .photo-gallery .east {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+</style>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=50&h=50&fit=crop"
+                    alt="BeautyOfBeaches Logo" />
+                <span>BeautyOfBeaches</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#travel">Travel</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="About us.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <input type="radio" name="Photos" id="check1" checked>
+    <input type="radio" name="Photos" id="check2" checked>
+    <input type="radio" name="Photos" id="check3" checked>
+    <input type="radio" name="Photos" id="check4" checked>
+    <input type="radio" name="Photos" id="check5" checked>
+
+    <div class="container">
+        <h1>𝓞𝓾𝓻 𝓑𝓮𝓪𝓬𝓱𝓮𝓼 𝓖𝓪𝓵𝓵𝓮𝓻𝔂</h1>
+        <div class="top-content">
+            <h3>Photo Gallery</h3>
+            <input type="radio" id="check1" name="Photos" checked>
+            <label for="check1">Beaches</label>
+        
+            <input type="radio" id="check2" name="Photos">
+            <label for="check2">North Photos</label>
+        
+            <input type="radio" id="check3" name="Photos">
+            <label for="check3">South Photos</label>
+        
+            <input type="radio" id="check4" name="Photos">
+            <label for="check4">West Places</label>
+        
+            <input type="radio" id="check5" name="Photos">
+            <label for="check5">East Places</label>
+        </div>
+        
+   
+    <!-- COntainer ended -->
+    <div class="photo-gallery">
+        <div class="pic place" data-name="Sunny Beach" >
+        <img src="./pictures/beach1.jpg"> 
+        </div>
+        <div class="pic place" data-name="Maya Beach">
+            <img src="./pictures/beach16.jpg">
+        </div>
+        <div class="pic place" data-name="Southern Serenity">
+            <img src="./pictures/beach17.jpg">
+        </div>
+        <div class="pic place" data-name="Paradise Bay">
+            <img src="./pictures/beach18.jpg">
+        </div>
+        <div class="pic family" data-name="Arctic Waves">
+            <img src="./pictures/beach2.jpg">
+        </div>
+        <div class="pic child" data-name="Golden Sands">
+            <img src="./pictures/beach3.jpg">
+        </div>
+        <div class="pic place" data-name="Emerald Shore">
+           <img src="./pictures/beach4.jpg" alt="">
+        </div>
+        <div class="pic family" data-name="Northern Breeze">
+            <img src="./pictures/beach5.jpg">
+        </div>
+        <div class="pic child" data-name="Coral Reef">
+            <img src="./pictures/beach6.jpg">
+        </div>
+        <div class="pic place" data-name="Blue Waters">
+            <img src="./pictures/beach7.jpg">
+        </div>
+        <div class="pic family" data-name="Crystal Cove">
+            <img src="./pictures/beach8.jpg">
+        </div>
+        <div class="pic child" data-name="Sunset Shore">
+            <img src="./pictures/beach9.jpg">
+        </div>
+        <div class="pic place" data-name=" Santorini">
+            <img src="./pictures/beach10.jpg">
+        </div>
+        <div class="pic family" data-name="vik Beach">
+            <img src="./pictures/beach11.jpg">
+        </div>
+        <div class="pic family" data-name=" Westhaven Bay">
+            <img src="./pictures/beach14.jpg">
+        </div>
+        <div class="pic family" data-name="Polar Sands">
+            <img src="./pictures/beach15.jpg">
+        </div>
+        <div class="pic child" data-name="Ocean Mirage">
+            <img src="./pictures/beach12.jpg">
+        </div>
+        <div class="pic child" data-name="gwangali Beach">
+            <img src="./pictures/beach13.jpg">
+        </div>
+        <div class="pic child" data-name="Paradise Point">
+            <img src="./pictures/beach14.jpg">
+        </div>
+        <div class="pic child" data-name="Horizon Bliss">
+            <img src="./pictures/beach15.jpg">
+        </div>
+        <!--  -->
+        <div class="pic east" data-name="Sunrise Lagoon">
+            <img src="./pictures/beach19.jpg">
+        </div>
+        <div class="pic east" data-name="Golden Horizon">
+            <img src="./pictures/beach21.jpg">
+        </div>
+        <div class="pic east" data-name="White bay beach">
+            <img src="./pictures/beach22.jpg">
+        </div>
+        <div class="pic east" data-name="Eastwind Bay">
+            <img src="./pictures/beach23.jpg">
+        </div>
+        <div class="pic east" data-name="Pearl Coast">
+            <img src="./pictures/beach24.jpg">
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
